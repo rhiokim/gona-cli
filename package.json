@@ -13,7 +13,7 @@
   "scripts": {
     "lint": "eslint --format=node_modules/eslint-formatter-pretty 'src/**/*.@(js|jsx)'",
     "lint:msg": "validate-commit-msg",
-    "test": "mocha",
+    "test": "mocha && ./bin/cli.js",
     "coverage": "nyc --reporter=json --reporter=lcov --reporter=text mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "commit": "git cz",
