@@ -12,10 +12,10 @@
   ],
   "private": true,
   "scripts": {
-    "lint": "eslint --format=node_modules/eslint-formatter-pretty 'src/**/*.@(js|jsx)'",
+    "lint": "eslint --format=node_modules/eslint-formatter-pretty 'lib/**/*.@(js|jsx)'",
     "flow": "flow",
     "lint:msg": "validate-commit-msg",
-    "format": "prettier-eslint --write 'src/**/*.@(js|jsx)'",
+    "format": "prettier-eslint --write 'lib/**/*.@(js|jsx)'",
     "test": "mocha",
     "cli": "./bin/cli.js",
     "coverage": "nyc --reporter=json --reporter=lcov --reporter=text mocha",
@@ -27,7 +27,7 @@
     "commitmsg": "npm run lint:msg"
   },
   "bin": {
-    "seed-cli": "bin/cli.js"
+    "todo5": "bin/cli.js"
   },
   "eslintConfig": {
     "extends": "standard"
