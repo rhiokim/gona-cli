@@ -1,5 +1,5 @@
 {
-  "name": "seed-cli",
+  "name": "haroo",
   "version": "0.1.2",
   "main": "index.js",
   "repository": "git@github.com:rhiokim/.seed-cli.git",
@@ -27,7 +27,7 @@
     "commitmsg": "npm run lint:msg"
   },
   "bin": {
-    "todo5": "bin/cli.js"
+    "haroo": "bin/cli.js"
   },
   "eslintConfig": {
     "extends": "standard"
@@ -75,6 +75,7 @@
     "lowdb": "^0.16.2",
     "meow": "^3.7.0",
     "mkdirp": "^0.5.1",
-    "ora": "^1.2.0"
+    "ora": "^1.2.0",
+    "rimraf": "^2.6.1"
   }
 }
