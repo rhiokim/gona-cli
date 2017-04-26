@@ -27,7 +27,7 @@
     "commitmsg": "npm run lint:msg"
   },
   "bin": {
-    "haroo": "bin/cli.js"
+    "todo": "bin/cli.js"
   },
   "eslintConfig": {
     "extends": "standard"
@@ -75,6 +75,7 @@
     "lowdb": "^0.16.2",
     "meow": "^3.7.0",
     "mkdirp": "^0.5.1",
+    "moment": "^2.18.1",
     "ora": "^1.2.0",
     "rimraf": "^2.6.1",
     "table": "^4.0.1"
