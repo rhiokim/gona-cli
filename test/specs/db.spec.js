@@ -6,15 +6,20 @@ const dir = path.join(homeDir(), '.haroo')
 const TestString = '    ✓'
 
 describe('Initialize Local DB', () => {
-  let db
+  let db, dbModule
   const year = new Date().getFullYear()
   const month = new Date().getMonth() + 1
   const date = new Date().getDate()
   const dbpath = path.join(dir, `${year}.json`)
+  const dbModulePath = path.join(__dirname, '../..', 'lib', 'db')
 
   beforeEach(() => {
-    rimraf.sync(dbpath)
-    db = require(path.join(__dirname, '../..', 'lib', 'db'))
+    rimraf.sync(dir)
+
+    // http://stackoverflow.com/questions/15666144/how-to-remove-module-after-require-in-node-js
+    delete require.cache[require.resolve(dbModulePath)]
+
+    db = require(dbModulePath)
   })
 
   it('should be exist YYYY.json db file in $HOME/.haroo folder', () => {
@@ -39,6 +44,7 @@ describe('Initialize Local DB', () => {
   it('should have task items', () => {
     const instance = db.instance
     const taskSubject = `task#${Math.random()}`
+
     db.add('tasks', taskSubject);
 
     const tasks = instance.get(`tasks/${month}/${date}`).value()
