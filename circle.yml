@@ -14,8 +14,8 @@ dependencies:
 #       - ci
       # https://circleci.com/docs/1.0/configuration/#branches
 test:
-  # override:
-  post:
+  override:
+  # post:
     - yarn run coverage # generate result of test coverage
     - yarn run coveralls
 
