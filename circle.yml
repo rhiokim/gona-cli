@@ -4,7 +4,9 @@ machine:
 
 dependencies:
   override:
-    - npm i -D
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
 
 # general:
 #   branches:
@@ -14,8 +16,8 @@ dependencies:
 test:
   # override:
   post:
-    - npm run coverage # generate result of test coverage
-    - npm run coveralls
+    - yarn run coverage # generate result of test coverage
+    - yarn run coveralls
 
 ## Customize checkout
 # checkout:
