@@ -3,7 +3,6 @@ const homeDir = require('home-dir')
 const rimraf = require('rimraf')
 
 const dir = path.join(homeDir(), '.haroo')
-const TestString = '    ✓'
 
 describe('Initialize Local DB', () => {
   let db, dbModule
