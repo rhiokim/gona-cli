@@ -32,23 +32,14 @@ describe('Initialize Local DB', () => {
     const instance = db.instance
 
     const tasks = instance.get(`tasks/${month}/${date}`).value()
-    tasks.should.be.an.Array
-    tasks.length.should.equal(0)
-
-    const links = instance.get(`links/${month}/${date}`).value()
-    links.should.be.an.Array
-    links.length.should.equal(0)
+    tasks.should.be.an.Object
   })
 
-  it('should have task items', () => {
+  it('should have default workspace item in tasks', () => {
     const instance = db.instance
-    const taskSubject = `task#${Math.random()}`
-
-    db.add('tasks', taskSubject);
 
     const tasks = instance.get(`tasks/${month}/${date}`).value()
-
-    tasks.length.should.equal(1)
-    tasks[0].subject.should.equal(taskSubject)
+    tasks.should.have.property('default')
+    tasks.default.should.be.an.Array
   })
 })
