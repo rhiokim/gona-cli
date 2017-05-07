@@ -79,6 +79,7 @@
     "ora": "^1.2.0",
     "rimraf": "^2.6.1",
     "table": "^4.0.1",
-    "update-notifier": "^2.1.0"
+    "update-notifier": "^2.1.0",
+    "uuid": "^3.0.1"
   }
 }
